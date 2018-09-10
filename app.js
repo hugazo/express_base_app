@@ -1,4 +1,5 @@
 var express = require('express');
+const bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -6,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 
 var app = express();
+
+app.use(bodyParser.json());
 
 app.use(logger('dev'));
 app.use(express.json());
